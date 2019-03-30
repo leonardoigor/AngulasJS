@@ -1,7 +1,7 @@
 import { Component } from "@angular/core";
 
 @Component({
-    selector: '[app-topo]',
+    selector: 'app-topo',
     templateUrl:'./topo.component.html',
     // template: `<p>
     // top componente!
@@ -11,4 +11,5 @@ import { Component } from "@angular/core";
 })
 export class TopoComponent {
 
+    public titulo:string ='Aprendendo Inglês'
 }

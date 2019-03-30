@@ -1,4 +1,4 @@
-import { Component, OnInit ,OnChanges, EventEmitter, Output} from '@angular/core';
+import { Component, OnInit ,OnChanges, EventEmitter, OnDestroy,Output} from '@angular/core';
 import { Frase } from '../shared/frase.model';
 import { FRASES } from './frases-mock';
 import { isUndefined } from 'util';
@@ -8,7 +8,7 @@ import { isUndefined } from 'util';
   templateUrl: './painel.component.html',
   styleUrls: ['./painel.component.css']
 })
-export class PainelComponent implements OnInit,OnChanges,Output {
+export class PainelComponent implements OnInit,OnChanges,Output,OnDestroy {
   public frases: Array<Frase> = FRASES
   public instrucao: string = "Traduza a frase"
   public resposta: string=''
@@ -26,9 +26,11 @@ export class PainelComponent implements OnInit,OnChanges,Output {
     this.atualizaRodada()
     this.MenssagemEndGame()
    }
-
   ngOnInit() {
     
+  }
+  ngOnDestroy(){
+    // console.log("painel destruido")
   }
   ngOnChanges()
   {
@@ -101,7 +103,7 @@ export class PainelComponent implements OnInit,OnChanges,Output {
       public MenssagemEndGame():void
       {
         let ide:boolean =true
-        console.log(ide)
+        // console.log(ide)
         if(ide)
         {
           this.ClassMensagem = this.menssagemGreen

@@ -28,7 +28,7 @@ export class TentativasComponent implements OnInit, OnChanges {
         
       }
     }
-    console.log(`tentativas: ${this.tentativas}`)
+    // console.log(`tentativas: ${this.tentativas}`)
 
   }
   ngOnInit() {

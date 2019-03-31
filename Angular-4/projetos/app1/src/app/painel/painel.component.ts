@@ -8,7 +8,7 @@ import { isUndefined } from 'util';
   templateUrl: './painel.component.html',
   styleUrls: ['./painel.component.css']
 })
-export class PainelComponent implements OnInit,OnChanges,Output,OnDestroy {
+export class PainelComponent implements OnInit,OnChanges,OnDestroy {
   public frases: Array<Frase> = FRASES
   public instrucao: string = "Traduza a frase"
   public resposta: string=''

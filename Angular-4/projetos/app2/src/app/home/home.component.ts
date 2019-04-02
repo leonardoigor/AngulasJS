@@ -20,9 +20,9 @@ export class HomeComponent implements OnInit {
     // this.ofertas = this.ofertasServices.getOfertas()
     // console.log(this.ofertas)
     
-    this.ofertasServices.getOfertas2()
+    this.ofertasServices.getOfertas()
     .then((ofertas:Oferta[])=>{
-      console.log('3sec')
+      // console.log('3sec')
       this.ofertas = ofertas
     })
     .catch((param:any)=>console.log(param))

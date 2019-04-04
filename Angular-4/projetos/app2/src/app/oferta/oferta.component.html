@@ -1,6 +1,12 @@
 <div class="container">
   <div class="oferta" *ngIf="oferta !==underfined">
-
+    <!-- <div class="row">
+      <div class="col">
+        <a [routerLink]="['/oferta',1]">Oferta 1</a>
+        <a [routerLink]="['/oferta',3]">Oferta 3</a>
+        <a [routerLink]="['/oferta',6]">Oferta 6</a>
+      </div>
+    </div> -->
     <div class="row">
       <div class="col">
         <h4>{{oferta.descricao_oferta}}</h4>
@@ -28,7 +34,7 @@
 
         <div class="row">
           <div class="col text-center">
-            <h1>R$ {{oferta.valor}}</h1>
+            <h1>{{oferta.valor |currency:'BRL'}}</h1>
           </div>
         </div>
 
@@ -47,10 +53,10 @@
         <nav>
           <div class="nav nav-tabs" id="nav-tab" role="tablist">
 
-            <a class="nav-item nav-link" rounterLinkActive='active' data-toggle="tab"  role="tab"
+            <a class="nav-item nav-link" rounterLinkActive='active' data-toggle="tab" role="tab"
               aria-controls="nav-home" aria-selected="true" routerLink="como-usar">Como usar!</a>
 
-            <a class="nav-item nav-link" rounterLinkActive='active'  data-toggle="tab"  role="tab"
+            <a class="nav-item nav-link" rounterLinkActive='active' data-toggle="tab" role="tab"
               aria-controls="nav-profile" aria-selected="false" routerLink="onde-fica">Onde fica?</a>
 
           </div>

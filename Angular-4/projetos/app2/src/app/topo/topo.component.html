@@ -1,10 +1,27 @@
 <div class="fixed-top">
   <nav class="navbar navbar-light bg-faded">
     <div class="container">
-      <a routerLink="/" class="navbar-brand">
-        <img src="/assets/logo.png" />
-      </a>
-      <a a href="#"><img src="/assets/carrinho.png" /></a>
+      <div class="row">
+        <div class="col-md-4">
+          <a routerLink="/" class="navbar-brand">
+            <img src="/assets/logo.png" class="img-fluid" />
+          </a>
+        </div>
+        <div class="col-md-6">          
+          <input type="text" name="" id="" class="form-control" placeholder="pesquise por efertas" #termoPesquisa (keyup)="pesquisa( termoPesquisa.value)">
+          <ul class="position-absolute" style="z-index:999">
+              <li *ngFor="let oferta of ofertas |async" class="list-group-item" >
+                <a [routerLink]="['/oferta',oferta.id]" (click)="limpaPesquisa()">
+                    {{oferta.titulo}}
+                </a> 
+              </li> 
+            </ul>
+        </div>
+
+        <div class="col-md-2">
+          <a routerLink="ordem-compra"><img src="/assets/carrinho.png" /></a>
+        </div>
+      </div>
     </div>
   </nav>
 
@@ -16,6 +33,9 @@
         </li>
         <li class="nav-item">
           <a class="nav-link" routerLinkActive='active' routerLink="diversao">Diversão</a>
+        </li>
+        <li class="nav-item">
+          <h6 class="nav-link">Hora: {{datatesta | date:' HH : mm : ss'}}</h6>
         </li>
       </ul>
     </div>

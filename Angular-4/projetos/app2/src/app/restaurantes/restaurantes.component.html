@@ -4,8 +4,8 @@
     <h3 class="text-center">Rodízios, Buffet, Carnes Especiais, Feijoada e mais!</h3>
     <h5 class="text-center">Conheça as melhores ofertas de restaurantes:</h5>
   </div>
-
   <hr />
+  
   <div *ngFor='let oferta of ofertas'>
     <div class="row">
       <div class="col-md-4">
@@ -16,19 +16,19 @@
         <div class="row">
           <h4>{{ oferta.titulo }}</h4>
         </div>
-
+        
         <div class="row">
           <h5>oferta.descricao_oferta</h5>
         </div>
-
+        
         <div class="row">
           <p>Anunciado por: <b>Original Burger</b></p>
         </div>
 
         <div class="row">
-          <p>R$ {{ oferta.valor }}</p>
+          <p>{{ oferta.valor |currency:'BRL'}}</p>
         </div>
-
+        
         <div class="row">
           <a routerLink="/oferta/{{oferta.id}}">
             <button class="btn btn-outline-success"> Ver oferta</button>

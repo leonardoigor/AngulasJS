@@ -6,18 +6,22 @@ import { OfertasService } from '../ofertas.service';
   selector: 'app-restaurantes',
   templateUrl: './restaurantes.component.html',
   styleUrls: ['./restaurantes.component.css'],
-  providers:[ OfertasService ]
+  providers: [OfertasService]
 })
 export class RestaurantesComponent implements OnInit {
-  public ofertas:Oferta[]
-  constructor(private ofertasservice:OfertasService) { }
+  public ofertas: Oferta[]
+  
+
+  constructor(private ofertasservice: OfertasService) { }
 
   ngOnInit() {
     this.ofertasservice.getOfertasPoCategorias('restaurante')
-    .then((ofertas:Oferta[])=> {
-      // console.log(ofertas)
-      this.ofertas=ofertas
-    })
+      .then((ofertas: Oferta[]) => {
+        // console.log(ofertas)
+        this.ofertas = ofertas
+      })
+      
   }
-
+  
+  
 }

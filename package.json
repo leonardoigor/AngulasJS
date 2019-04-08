@@ -8,5 +8,10 @@
   },
   "keywords": [],
   "author": "Igor Leonardo <igor_mendonca@outlook.com>",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^4.3.1",
+    "jquery": "^3.3.1",
+    "popper.js": "^1.15.0"
+  }
 }
